@@ -4,6 +4,7 @@
 #include "../utils/Logger.h"
 
 using namespace std;
+using namespace Erbium;
 
 const char* Logger::logFileName = "engine.log";
 map<EventType, vector<Module*>> EventManager::subscribedModules;

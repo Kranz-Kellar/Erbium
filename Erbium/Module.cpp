@@ -1,6 +1,7 @@
 #include "Module.h"
 #include "EventManager.h"
 
+using namespace Erbium;
 
 void Module::invokeEvent(Event* event)
 {
