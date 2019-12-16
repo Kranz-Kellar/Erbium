@@ -1,6 +1,7 @@
 #pragma once
 #include <string>
 #include <stdio.h>
+#include <mutex>
 #define LOG_MSG_SIZE 128
 
 namespace Erbium {
@@ -16,7 +17,7 @@ namespace Erbium {
 	class Logger
 	{
 		static const char* logFileName;
-
+		static std::mutex logMutex;
 		static const char* addStatusPrefix(LogStatus status) {
 			switch (status) {
 			case LOG_INFO:
@@ -45,6 +46,7 @@ namespace Erbium {
 	public:
 
 		static void Log(LogStatus status, const char* msg) {
+			logMutex.lock();
 			char finalMessage[LOG_MSG_SIZE] = "";
 			const char* prefix = addStatusPrefix(status);
 			strncat(finalMessage, prefix, strlen(prefix));
@@ -54,6 +56,7 @@ namespace Erbium {
 #ifdef _DEBUG
 			printf(finalMessage);
 #endif
+			logMutex.unlock();
 		}
 	};
 

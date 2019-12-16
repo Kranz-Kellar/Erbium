@@ -130,6 +130,7 @@
     <ClCompile Include="EventManager.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Module.cpp" />
+    <ClCompile Include="ThreadPool.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Engine.h" />
@@ -137,6 +138,7 @@
     <ClInclude Include="EventManager.h" />
     <ClInclude Include="EventType.h" />
     <ClInclude Include="Module.h" />
+    <ClInclude Include="ThreadPool.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
