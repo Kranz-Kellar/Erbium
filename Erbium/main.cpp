@@ -1,10 +1,12 @@
 #include <stdio.h>
 #include "Engine.h"
+#include "EventManager.h"
 #include "../utils/Logger.h"
 
-
+using namespace std;
 
 const char* Logger::logFileName = "engine.log";
+map<EventType, vector<Module*>> EventManager::subscribedModules;
 
 int main()
 {

@@ -29,6 +29,8 @@ class Logger
 		case LOG_DEBUG:
 			return "[DEBUG] ";
 		}
+
+		return "[UNKNOW]";
 	}
 
 	static void writeMessageToLogFile(const char* text) {

@@ -1,6 +1,6 @@
 #pragma once
-#include "Event.h"
 #include <stdint.h>
+#include "Event.h"
 
 class Module
 {
@@ -14,7 +14,9 @@ public:
 	void virtual disable() = 0;
 	void virtual terminate() = 0;
 
-	void virtual invokeEvent(Event* event) = 0;
 	void virtual onEvent(Event* event) = 0;
+	void virtual invokeEvent(Event* event);
+	void virtual subscribeOnEventType(EventType type);
+	void virtual unsubscribeFromEventType(EventType type);
 };
 
