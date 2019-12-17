@@ -12,7 +12,6 @@ mutex Logger::logMutex;
 map<EventType, vector<Module*>> EventManager::subscribedModules;
 
 void sum() {
-	
 	std::this_thread::sleep_for(chrono::milliseconds(500));
 	printf("sum1\n");
 }
@@ -22,7 +21,6 @@ void sum2() {
 	printf("sum2\n");
 }
 void sum3() {
-	
 	std::this_thread::sleep_for(chrono::milliseconds(700));
 	printf("sum3\n");
 }

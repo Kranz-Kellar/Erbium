@@ -18,7 +18,7 @@ namespace Erbium {
 	{
 		vector<thread> workers;
 		uint32_t maxThreadNums;
-		std::atomic<bool> workInProgress;
+		bool workInProgress;
 		mutex poolMutex;
 		mutex terminateMutex;
 		condition_variable condition;

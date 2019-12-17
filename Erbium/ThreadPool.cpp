@@ -16,7 +16,7 @@ Erbium::ThreadPool::~ThreadPool()
 void Erbium::ThreadPool::InfiniteWork()
 {
 	while (workInProgress) {
-
+		printf("Waiting for job!\n");
 		unique_lock<mutex> lock(poolMutex);
 		if (!jobs.empty()) {
 			auto job = jobs.front();
@@ -26,6 +26,7 @@ void Erbium::ThreadPool::InfiniteWork()
 		}
 		else {
 			std::this_thread::sleep_for(chrono::milliseconds(1));
+			printf("End of waiting!\n");
 		}
 	}
 }
