@@ -16,15 +16,17 @@ Erbium::ThreadPool::~ThreadPool()
 void Erbium::ThreadPool::InfiniteWork()
 {
 	while (workInProgress) {
+
 		unique_lock<mutex> lock(poolMutex);
-		Logger::Log(LOG_DEBUG, "Waiting Job");
-		condition.wait(lock, [this] {return jobs.empty() || workInProgress; });
-		auto job = jobs.front();
-		jobs.pop();
-		printf("Doing some job");
-		Logger::Log(LOG_DEBUG, "Doing some job");
-		job();
-		Logger::Log(LOG_DEBUG, "Job complete!");
+		if (!jobs.empty()) {
+			auto job = jobs.front();
+			jobs.pop();
+			job();
+			printf("Job complete!\n");
+		}
+		else {
+			std::this_thread::sleep_for(chrono::milliseconds(1));
+		}
 	}
 }
 
@@ -33,18 +35,20 @@ void Erbium::ThreadPool::AddJob(function<void()> job)
 	unique_lock<mutex> lock(poolMutex);
 	jobs.push(job);
 	condition.notify_one();
-	Logger::Log(LOG_DEBUG, "Job added");
 }
 
 void Erbium::ThreadPool::Terminate()
 {
-	unique_lock<mutex> lock(poolMutex);
-	workInProgress = false;
-
-	condition.notify_all();
-
-	for (thread& worker : workers) {
-		worker.join();
+	{
+		unique_lock<mutex> lock(terminateMutex);
+		workInProgress = false;
+		condition.notify_all();
 	}
+	for (thread& worker : workers) {
+		if (worker.joinable()) {
+			worker.join();
+		}
+	}
+
 	workers.empty();
 }

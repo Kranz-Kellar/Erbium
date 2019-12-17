@@ -5,7 +5,9 @@
 #include <mutex>
 #include <functional>
 #include <stdio.h>
-
+#include <chrono>
+#include <iostream>
+#include <atomic>
 #include "../utils/Logger.h"
 
 using namespace std;
@@ -16,8 +18,9 @@ namespace Erbium {
 	{
 		vector<thread> workers;
 		uint32_t maxThreadNums;
-		bool workInProgress;
+		std::atomic<bool> workInProgress;
 		mutex poolMutex;
+		mutex terminateMutex;
 		condition_variable condition;
 		queue<function<void()>> jobs;
 
