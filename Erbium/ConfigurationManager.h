@@ -9,7 +9,7 @@ namespace Erbium {
 	class ConfigurationManager
 	{
 	public:
-		static void LoadConfigurations();
+		void LoadConfigurations();
 	};
 
 }

@@ -8,5 +8,5 @@ void Erbium::ConfigurationManager::LoadConfigurations()
 		Logger::Log(LOG_CRITICAL, "Config file not found");
 		return;
 	}
-	
+
 }
