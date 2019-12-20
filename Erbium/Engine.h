@@ -1,7 +1,9 @@
 #pragma once
 #include <map>
 #include <stdint.h>
-#include "Module.h"
+
+
+#include "../resource_manager/ResourceManager.h"
 
 namespace Erbium {
 

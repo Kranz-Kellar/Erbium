@@ -13,6 +13,9 @@ Engine::~Engine()
 void Engine::init()
 {
 	//Adding modules here
+
+	ResourceManager* resManager = new ResourceManager();
+	this->addModule(1, resManager);
 }
 
 void Engine::addModule(uint32_t moduleNum, Module* new_module)
