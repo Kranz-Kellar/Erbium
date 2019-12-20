@@ -1,14 +1,15 @@
 #pragma once
 #include <stdint.h>
+#include "ModuleType.h"
 #include "Event.h"
 
 namespace Erbium {
 
 	class Module
 	{
-
+		ModuleType type;
 	public:
-		Module() {}
+		Module() : type(MODULE_NONE) {}
 		virtual ~Module() {}
 
 		void virtual init() = 0;
