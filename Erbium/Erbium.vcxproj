@@ -138,6 +138,7 @@
     <ClInclude Include="EventManager.h" />
     <ClInclude Include="EventType.h" />
     <ClInclude Include="Module.h" />
+    <ClInclude Include="ModuleType.h" />
     <ClInclude Include="ThreadPool.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
