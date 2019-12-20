@@ -1,5 +1,7 @@
 #include "Engine.h"
 
+using namespace Erbium;
+
 Engine::Engine()
 {
 }

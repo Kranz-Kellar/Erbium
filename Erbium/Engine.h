@@ -3,23 +3,26 @@
 #include <stdint.h>
 #include "Module.h"
 
-class Engine
-{
-	std::map<uint32_t, Module*> modules;
+namespace Erbium {
 
-public:
-	Engine();
-	~Engine();
+	class Engine
+	{
+		std::map<uint32_t, Module*> modules;
 
-	void init();
+	public:
+		Engine();
+		~Engine();
 
-	void addModule(uint32_t moduleNum, Module* new_module);
-	Module* getModule(uint32_t moduleNum);
-	void disableModule(uint32_t moduleNum);
-	void terminateModule(uint32_t moduleNum);
+		void init();
 
-	void initModules();
-	void updateModules(uint32_t deltaTime);
-	void terminateModules();
-};
+		void addModule(uint32_t moduleNum, Module* new_module);
+		Module* getModule(uint32_t moduleNum);
+		void disableModule(uint32_t moduleNum);
+		void terminateModule(uint32_t moduleNum);
 
+		void initModules();
+		void updateModules(uint32_t deltaTime);
+		void terminateModules();
+	};
+
+}

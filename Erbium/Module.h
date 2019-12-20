@@ -1,20 +1,26 @@
 #pragma once
-#include "Event.h"
 #include <stdint.h>
+#include "ModuleType.h"
+#include "Event.h"
 
-class Module
-{
+namespace Erbium {
 
-public:
-	Module() {}
-	virtual ~Module() {}
+	class Module
+	{
+		ModuleType type;
+	public:
+		Module() : type(MODULE_NONE) {}
+		virtual ~Module() {}
 
-	void virtual init() = 0;
-	void virtual update(uint32_t deltaTime) = 0;
-	void virtual disable() = 0;
-	void virtual terminate() = 0;
+		void virtual init() = 0;
+		void virtual update(uint32_t deltaTime) = 0;
+		void virtual disable() = 0;
+		void virtual terminate() = 0;
 
-	void virtual invokeEvent(Event* event) = 0;
-	void virtual onEvent(Event* event) = 0;
-};
+		void virtual onEvent(Event* event) = 0;
+		void virtual invokeEvent(Event* event);
+		void virtual subscribeOnEventType(EventType type);
+		void virtual unsubscribeFromEventType(EventType type);
+	};
 
+}

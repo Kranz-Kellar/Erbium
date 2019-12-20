@@ -1,6 +1,8 @@
 #pragma once
 
-enum EventType {
-	EV_NONE,
-	EV_INPUT
-};
+namespace Erbium {
+	enum EventType {
+		EV_NONE,
+		EV_INPUT
+	};
+}
