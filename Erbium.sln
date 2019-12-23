@@ -4,6 +4,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 16.0.29509.3
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Erbium", "Erbium\Erbium.vcxproj", "{3E00EA3A-A8E0-4016-8D68-B6318A43C523}"
+	ProjectSection(ProjectDependencies) = postProject
+		{BD1F1C67-0142-43BA-A62B-6C78D2700390} = {BD1F1C67-0142-43BA-A62B-6C78D2700390}
+		{58DA77D1-9562-410B-8422-4EB5669D75B0} = {58DA77D1-9562-410B-8422-4EB5669D75B0}
+		{7AC2ADE8-8720-43CB-8B06-EC20E089455F} = {7AC2ADE8-8720-43CB-8B06-EC20E089455F}
+	EndProjectSection
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "utils", "utils\utils.vcxproj", "{58DA77D1-9562-410B-8422-4EB5669D75B0}"
 EndProject

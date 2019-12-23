@@ -13,6 +13,9 @@ Engine::~Engine()
 void Engine::init()
 {
 	//Adding modules here
+
+	GLFWWindowHandler* window = new GLFWWindowHandler();
+	//this->addModule(1, window);
 }
 
 void Engine::addModule(uint32_t moduleNum, Module* new_module)
