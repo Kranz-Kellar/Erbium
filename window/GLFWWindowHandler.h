@@ -1,13 +1,16 @@
 #pragma once
 
 #include "3rdParty/GLFW/glfw3.h"
-#include "../Erbium/Module.h"
 #include "../utils/Logger.h"
+#include "../Erbium/Module.h"
+
 
 namespace Erbium {
 
+
 	class GLFWWindowHandler : public Module
 	{
+	
 		GLFWwindow* windowPtr;
 
 		int windowWidth = 640;

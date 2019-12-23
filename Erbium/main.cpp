@@ -4,6 +4,10 @@
 #include "ThreadPool.h"
 #include "../utils/Logger.h"
 
+
+#include "../window/GLFWWindowHandler.h"
+#include "../renderer/IRenderer.h"
+
 using namespace std;
 using namespace Erbium;
 
@@ -16,6 +20,10 @@ int main()
 	Engine engine;
 	engine.init();
 	engine.initModules();
+
+	GLFWWindowHandler* window = new GLFWWindowHandler();
+	
+	engine.addModule(1, window);
 
 	engine.updateModules(1);
 

@@ -1,29 +1,26 @@
 #include "Engine.h"
 
-using namespace Erbium;
-
-Engine::Engine()
+Erbium::Engine::Engine()
 {
 }
 
-Engine::~Engine()
+Erbium::Engine::~Engine()
 {
 }
 
-void Engine::init()
+void Erbium::Engine::init()
 {
 	//Adding modules here
 
-	GLFWWindowHandler* window = new GLFWWindowHandler();
-	//this->addModule(1, window);
+
 }
 
-void Engine::addModule(uint32_t moduleNum, Module* new_module)
+void Erbium::Engine::addModule(uint32_t moduleNum, Module* new_module)
 {
 	this->modules[moduleNum] = new_module;
 }
 
-Module* Engine::getModule(uint32_t moduleNum)
+Erbium::Module* Erbium::Engine::getModule(uint32_t moduleNum)
 {
 	if (this->modules[moduleNum] != nullptr) {
 		return modules[moduleNum];
@@ -31,17 +28,17 @@ Module* Engine::getModule(uint32_t moduleNum)
 	return nullptr;
 }
 
-void Engine::disableModule(uint32_t moduleNum)
+void Erbium::Engine::disableModule(uint32_t moduleNum)
 {
 	modules[moduleNum]->disable();
 }
 
-void Engine::terminateModule(uint32_t moduleNum)
+void Erbium::Engine::terminateModule(uint32_t moduleNum)
 {
 	modules[moduleNum]->terminate();
 }
 
-void Engine::initModules()
+void Erbium::Engine::initModules()
 {
 	for (std::map<uint32_t, Module*>::iterator it = modules.begin();
 		it != modules.end(); ++it) {
@@ -49,7 +46,7 @@ void Engine::initModules()
 	}
 }
 
-void Engine::updateModules(uint32_t deltaTime)
+void Erbium::Engine::updateModules(uint32_t deltaTime)
 {
 	for (std::map<uint32_t, Module*>::iterator it = modules.begin();
 		it != modules.end(); ++it) {
@@ -57,7 +54,7 @@ void Engine::updateModules(uint32_t deltaTime)
 	}
 }
 
-void Engine::terminateModules()
+void Erbium::Engine::terminateModules()
 {
 	for (std::map<uint32_t, Module*>::iterator it = modules.begin();
 		it != modules.end(); ++it) {
