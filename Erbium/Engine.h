@@ -3,6 +3,9 @@
 #include <stdint.h>
 #include "Module.h"
 
+#include "../window/GLFWWindowHandler.h"
+
+
 namespace Erbium {
 
 	class Engine

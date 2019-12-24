@@ -7,6 +7,7 @@ namespace Erbium {
 
 	class Module
 	{
+	protected:
 		ModuleType type;
 	public:
 		Module() : type(MODULE_NONE) {}

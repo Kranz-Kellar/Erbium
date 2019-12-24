@@ -2,6 +2,7 @@
 
 namespace Erbium {
 	enum ModuleType {
-		MODULE_NONE
+		MODULE_NONE,
+		MODULE_WINDOW
 	};
 }
