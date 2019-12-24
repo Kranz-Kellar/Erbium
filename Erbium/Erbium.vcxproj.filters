@@ -33,10 +33,10 @@
     <ClCompile Include="ThreadPool.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="ConfigurationManager.cpp">
+    <ClCompile Include="3rdParty\pugixml\pugixml.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="3rdParty\pugixml\pugixml.cpp">
+    <ClCompile Include="ConfigurationManager.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
   </ItemGroup>
@@ -62,15 +62,18 @@
     <ClInclude Include="ModuleType.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="ConfigurationManager.h">
-      <Filter>Файлы заголовков</Filter>
-    </ClInclude>
     <ClInclude Include="3rdParty\pugixml\pugiconfig.hpp">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
     <ClInclude Include="3rdParty\pugixml\pugixml.hpp">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
+    <ClInclude Include="ConfigurationManager.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="config.ini" />
   </ItemGroup>
   <ItemGroup>
     <None Include="config.ini" />
