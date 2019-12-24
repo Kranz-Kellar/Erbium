@@ -9,8 +9,9 @@ namespace Erbium {
 	{
 	protected:
 		ModuleType type;
+		bool isDisabled;
 	public:
-		Module() : type(MODULE_NONE) {}
+		Module() : type(MODULE_NONE), isDisabled(false) {}
 		virtual ~Module() {}
 
 		void virtual init() = 0;
