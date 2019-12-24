@@ -1,5 +1,7 @@
 #include "Engine.h"
 
+#include "../window/GLFWWindowHandler.cpp"
+
 Erbium::Engine::Engine()
 {
 }
@@ -10,9 +12,8 @@ Erbium::Engine::~Engine()
 
 void Erbium::Engine::init()
 {
-	//Adding modules here
-
-
+	GLFWWindowHandler* windowHandler = new GLFWWindowHandler();
+	this->addModule(MODULE_WINDOW, windowHandler);
 }
 
 void Erbium::Engine::addModule(uint32_t moduleNum, Module* new_module)

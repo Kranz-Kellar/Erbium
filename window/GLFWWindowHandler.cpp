@@ -1,6 +1,6 @@
 #include "GLFWWindowHandler.h"
 
-Erbium::GLFWWindowHandler::GLFWWindowHandler()
+Erbium::GLFWWindowHandler::GLFWWindowHandler() : Module()
 {
 	this->type = MODULE_WINDOW;
 }

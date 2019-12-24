@@ -2,11 +2,6 @@
 #include "Engine.h"
 #include "EventManager.h"
 #include "ThreadPool.h"
-#include "../utils/Logger.h"
-
-
-#include "../window/GLFWWindowHandler.h"
-#include "../renderer/IRenderer.h"
 
 using namespace std;
 using namespace Erbium;
@@ -21,10 +16,6 @@ int main()
 	engine.init();
 	engine.initModules();
 
-	GLFWWindowHandler* window = new GLFWWindowHandler();
-	
-	engine.addModule(1, window);
-
 	engine.updateModules(1);
 
 	engine.terminateModules();
@@ -32,3 +23,7 @@ int main()
 	return 0;
 }
 
+/*
+	Module -> Erbium
+	Erbium !-> Module
+*/
